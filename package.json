@@ -1,0 +1,29 @@
+{
+  "name": "code-snippets-generator",
+  "version": "1.0.2",
+  "description": "A code generator npm package for creating boilerplate code snippets in various programming languages.",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Akhil",
+  "license": "ISC",
+  "bin": {
+    "my-code-generator": "./bin/my-code-generator"
+  },
+  "dependencies": {
+    "handlebars": "^4.7.8"
+  },
+  "repository": {
+    "type": "git",
+    "url": "YOUR_GIT_REPOSITORY_URL"
+  },
+  "keywords": [
+    "code",
+    "generator",
+    "boilerplate",
+    "snippets",
+    "programming",
+    "languages"
+  ],
+  "homepage": ""
+}

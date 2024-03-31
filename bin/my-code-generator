@@ -1,0 +1,91 @@
+#!/usr/bin/env node
+
+const {
+    generateCode,
+    saveJavaCodeToFile,
+    savePythonCodeToFile,
+    saveCppCodeToFile,
+    saveJavaScriptCodeToFile,
+    saveGoCodeToFile,
+    saveReactCodeToFile,
+    saveRustCodeToFile,
+    saveHtmlCodeToFile,
+    saveAngularCodeToFile,
+    saveCssCodeToFile,
+    saveKotlinCodeToFile,
+    saveFlutterCodeToFile,
+    saveTypeScriptCodeToFile,
+    savePhpCodeToFile,
+    saveRCodeToFile,
+    saveRubyCodeToFile
+} = require('../lib/codeGenerator');
+
+const args = process.argv.slice(2);
+if (args.length < 2) {
+    console.error('Usage: npx code-snippets-generator <language> <functionName>');
+    process.exit(1);
+}
+
+const language = args[0];
+const functionName = args[1];
+
+try {
+    const code = generateCode(language, functionName);
+    console.log(code);
+    
+    switch(language.toLowerCase()) {
+        case 'java':
+            saveJavaCodeToFile(functionName, code);
+            break;
+        case 'python':
+            savePythonCodeToFile(functionName, code);
+            break;
+        case 'cpp':
+            saveCppCodeToFile(functionName, code);
+            break;
+        case 'javascript':
+            saveJavaScriptCodeToFile(functionName, code);
+            break;
+        case 'go':
+            saveGoCodeToFile(functionName, code);
+            break;
+        case 'react':
+            saveReactCodeToFile(functionName, code);
+            break;
+        case 'rust':
+            saveRustCodeToFile(functionName, code);
+            break;
+        case 'html':
+            saveHtmlCodeToFile(functionName, code);
+            break;
+        case 'angular':
+            saveAngularCodeToFile(functionName, code);
+            break;
+        case 'css':
+            saveCssCodeToFile(functionName, code);
+            break;
+        case 'kotlin':
+            saveKotlinCodeToFile(functionName, code);
+            break;
+        case 'flutter':
+            saveFlutterCodeToFile(functionName, code);
+            break;
+        case 'typescript':
+            saveTypeScriptCodeToFile(functionName, code);
+            break;
+        case 'php':
+            savePhpCodeToFile(functionName, code);
+            break;
+        case 'r':
+            saveRCodeToFile(functionName, code);
+            break;
+        case 'ruby':
+            saveRubyCodeToFile(functionName, code);
+            break;
+        default:
+            console.error('Unsupported language:', language);
+    }
+} catch (err) {
+    console.error('Error:', err.message);
+    process.exit(1);
+}
